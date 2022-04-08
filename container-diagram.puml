@@ -1,0 +1,30 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(user, "Homeowners", "Homeowners that can access dashboard")
+
+System_Ext(ip, "Identity provider", "Provides Auth0 for authentication")
+
+System_Boundary(boundry, "SmartHome-Dashboard"){
+	Container(spa, "Single-Page Application", "React + TypeScript", "Provides a dashboard via the web browser.")
+	
+	Container(api, "API", "Next.js + Prisma ORM", "Retrieves and writes the dashboard data.")
+
+	ContainerDb(db, "Database", "PostgreSQL", "Stores the sensor data.")
+
+    Container(jetson, "IOT sensors", "Python", "Provides sensor data from Jetson Nano.")
+}
+
+Rel_D(user, spa, "Monitor dashboard")
+
+Rel_D(spa, api, "Makes API calls to", "JSON/HTTPS")
+
+Rel_D(jetson, api, "Sends sensor data", "MQTT/AMQP")
+
+Rel_D(api, db, "Reads from and writes to.")
+
+Rel_D(spa, ip, "Makes API calls to", "JSON/HTTPS")
+
+@enduml
