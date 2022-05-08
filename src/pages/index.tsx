@@ -1,10 +1,15 @@
-import type { NextPage } from 'next'
 import { CatSensor } from '../components/CatSensor'
+import { json } from 'stream/consumers'
+import type { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <div>
-        <CatSensor detectedAt='tien jaar'/>
+        <Head>          
+        </Head>
+        <CatSensor detectedAt='tien jaar'/>                
     </div>
   )
 }
