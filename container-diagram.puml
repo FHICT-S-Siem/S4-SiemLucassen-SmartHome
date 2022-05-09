@@ -17,7 +17,7 @@ System_Boundary(boundry, "SmartHome-Dashboard"){
     Container(jetson, "IOT sensors", "Python", "Provides sensor data from Jetson Nano.")
 }
 
-Rel_D(user, spa, "Monitor dashboard")
+Rel_D(user, spa, "Monitors dashboard")
 
 Rel_D(spa, api, "Makes API calls to", "JSON/HTTPS")
 
