@@ -7,15 +7,17 @@
         @apply flex flex-row items-center 
         bg-primary dark:bg-dark-primary text-white
         w-full h-16 m-0 
+        transition-all duration-300 ease-linear
         shadow-xl;
     }
 
     .topbar-icon {
         @apply mr-5 ml-5 flex flex-row justify-end
         h-6 w-6
-        transition duration-300 ease-in-out 
+        transition duration-300 ease-in-out
         text-blue-500
         hover:text-yellow-600 
+        hover:animate-spin
         cursor-pointer;
     }
 
@@ -23,7 +25,8 @@
         @apply flex flex-col 
         fixed top-16 left-0 h-screen w-16 m-0
         bg-primary text-white shadow-xl
-        dark:bg-dark-primary
+        dark:bg-dark-primary 
+        transition-all duration-300 ease-linear
     }
 
     .sidebar-icon {
@@ -32,7 +35,8 @@
         bg-gray-800 text-blue-500
         hover:bg-blue-600 hover:text-white
         rounded-3xl hover:rounded-xl
-        transition-all duration-300 ease-linear;
+        transition-all duration-300 ease-linear
+        cursor-pointer;
     }
 
     .sidebar-tooltip {
