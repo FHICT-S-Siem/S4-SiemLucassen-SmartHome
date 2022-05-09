@@ -6,8 +6,8 @@ interface CatSensorProps {
 
 export const CatSensor: React.FC<CatSensorProps> = ({detectedAt}) => {
         return (
-			<div>
-				<h1 className="text-blue-400">{detectedAt}</h1>
+			<div className="text-center text-blue-400">
+				<h1>{detectedAt}</h1>
 			</div>
 		);
 }
