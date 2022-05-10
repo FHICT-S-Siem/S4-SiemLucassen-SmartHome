@@ -7,7 +7,7 @@ const Layout = ({children}) => {
         <TopBar />
         <div className='flex flex-row'>
         <div className='content'>
-            <div className='m-2'>
+            <div className='m-2 flex flex-col'>
                 {children}
             </div>
         </div>

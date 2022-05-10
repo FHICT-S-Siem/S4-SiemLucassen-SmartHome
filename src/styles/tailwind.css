@@ -34,6 +34,8 @@
         h-12 w-12 mt-2 mb-2 mx-auto
         bg-gray-800 text-blue-500
         hover:bg-blue-600 hover:text-white
+        focus:bg-blue-600 
+        active:text-black active:transition-none
         rounded-3xl hover:rounded-xl
         transition-all duration-300 ease-linear
         cursor-pointer;
@@ -51,5 +53,12 @@
         bg-white text-blue-500
         dark:bg-dark-canvas 
         w-screen h-screen
+    }
+
+    .catcard {
+        @apply max-w-xs overflow-hidden p-2 m-2
+        shadow-lg rounded-md
+        bg-primary text-white
+        dark:bg-dark-primary dark:text-blue-500
     }
 }

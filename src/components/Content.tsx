@@ -1,16 +1,16 @@
 import React from 'react'
 import Analytics from '../pages/Analytics';
-import CatSensor from '../pages/CatSensor';
+import CatSensor, {CatSensorProps} from '../pages/CatSensor';
 import Room from '../pages/Room';
 
 interface ContentProps {
-
+    catDetections: CatSensorProps[]
 }
 
-export const Content: React.FC<ContentProps> = ({}) => {
+export const Content: React.FC<ContentProps> = ({catDetections}) => {
         return ( 
             <>
-                <CatSensor />
+                {catDetections.map(cD => <CatSensor key={cD.id} {...cD}/>)}
                 <Analytics />
                 <Room />                 
             </>      
