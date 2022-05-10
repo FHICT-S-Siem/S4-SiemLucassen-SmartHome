@@ -11,7 +11,7 @@ module.exports = {
         'secondary': '#66738B',
         'dark-primary': '#0E1115',
         'dark-secondary': '#66738B',
-        'dark-canvas': '#1D222D',
+        'dark-canvas': '#000E31',
       }
     },
   },

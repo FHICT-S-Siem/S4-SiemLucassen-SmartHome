@@ -4,7 +4,7 @@
 
 @layer components {
     .topbar {
-        @apply flex flex-row items-center 
+        @apply flex flex-row items-center fixed z-20
         bg-primary dark:bg-dark-primary text-white
         w-full h-16 m-0 
         transition-all duration-300 ease-linear
@@ -22,15 +22,15 @@
     }
 
     .sidebar {
-        @apply flex flex-col 
-        fixed top-16 left-0 h-screen w-16 m-0
+        @apply flex flex-col fixed
+        top-16 left-0 h-screen w-16 m-0
         bg-primary text-white shadow-xl
         dark:bg-dark-primary 
         transition-all duration-300 ease-linear
     }
 
     .sidebar-icon {
-        @apply relative flex items-center justify-center
+        @apply relative flex items-center justify-center z-10
         h-12 w-12 mt-2 mb-2 mx-auto
         bg-gray-800 text-blue-500
         hover:bg-blue-600 hover:text-white
@@ -44,5 +44,12 @@
         text-white bg-gray-900 
         text-xs font-bold 
         transition-all duration-100 scale-0 origin-left;        
+    }
+
+    .content {
+        @apply flex flex-col top-16 left-16 fixed z-0
+        bg-white text-blue-500
+        dark:bg-dark-canvas 
+        w-screen h-screen
     }
 }

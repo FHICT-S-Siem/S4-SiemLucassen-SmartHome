@@ -1,17 +1,11 @@
-import { CatSensor } from '../components/CatSensor'
-import { json } from 'stream/consumers'
-import type { GetStaticProps, NextPage } from 'next'
-import Image from 'next/image'
-import { SideBar } from '../components/SideBar'
-import { TopBar } from '../components/TopBar'
+import { Content } from '../components/Content'
+
 
 const Home = () => {
-  return (
-    <div className='flex'>
-        <TopBar />
-        <SideBar />    
-    </div>
-  )
+  return (    
+    <Content>
+    </Content>
+  );
 }
 
 export default Home
