@@ -3,11 +3,14 @@
 /.pnp
 .pnp.js
 node_modules
+
 # testing
 /coverage
 
 # next.js
 /.next/
+.next
+.next/cache
 /out/
 
 # production

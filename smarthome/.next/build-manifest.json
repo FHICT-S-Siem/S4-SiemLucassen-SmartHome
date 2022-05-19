@@ -15,10 +15,10 @@
     "static/development/_middlewareManifest.js"
   ],
   "pages": {
-    "/CatSensor": [
+    "/CatPage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/CatSensor.js"
+      "static/chunks/pages/CatPage.js"
     ],
     "/Room": [
       "static/chunks/webpack.js",
