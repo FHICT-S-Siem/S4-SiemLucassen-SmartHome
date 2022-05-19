@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .topbar {
+        @apply flex flex-row items-center justify-between z-20
+        bg-primary dark:bg-dark-primary text-white
+        w-full h-16 m-0 
+        transition-all duration-300 ease-linear
+        shadow-xl;
+    }
+
+    .topbar-icon {
+        @apply mr-5 ml-5 flex flex-row justify-end
+        h-6 w-6
+        transition duration-300 ease-in-out
+        text-blue-500
+        hover:text-yellow-600 
+        hover:animate-spin
+        cursor-pointer;
+    }
+
+    .sidebar {
+        @apply flex flex-col fixed
+        top-16 left-0 h-screen w-16 m-0
+        bg-primary text-white shadow-xl
+        dark:bg-dark-primary 
+        transition-all duration-300 ease-linear
+    }
+
+    .sidebar-icon {
+        @apply relative flex items-center justify-center z-10
+        h-12 w-12 mt-2 mb-2 mx-auto
+        bg-gray-800 text-blue-500
+        hover:bg-blue-600 hover:text-white
+        focus:bg-blue-600 
+        active:text-black active:transition-none
+        rounded-3xl hover:rounded-xl
+        transition-all duration-300 ease-linear
+        cursor-pointer;
+    }
+
+    .sidebar-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+        text-white bg-gray-900 
+        text-xs font-bold 
+        transition-all duration-100 scale-0 origin-left;        
+    }
+
+    .content {
+        @apply flex flex-col top-16 left-16 fixed z-0
+        bg-white text-blue-500
+        dark:bg-dark-canvas 
+        w-screen h-screen
+    }
+
+    .catcard {
+        @apply max-w-xs overflow-hidden p-2 m-2
+        shadow-lg rounded-md
+        bg-primary text-white
+        dark:bg-dark-primary dark:text-blue-500
+    }
+}
