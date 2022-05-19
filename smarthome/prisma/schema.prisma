@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Detection {
+  id         Int      @id @default(autoincrement())
+  objects    Object[]
+  detectedAt String
+  image      String
+}
+
+model Object {
+  id         Int       @id @default(autoincrement())
+  detection  Detection @relation(fields: [objectId], references: [id])
+  objectId   Int
+  xMin       Float
+  yMin       Float
+  xMax       Float
+  yMax       Float
+  confidence Float
+  type       String
+}
