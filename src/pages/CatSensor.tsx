@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {FC} from 'react'
 import Image from 'next/image'
 
 interface CatSensorProps {
@@ -14,10 +14,12 @@ interface CatSensorProps {
     confidence: number
   }[]
   detectedAt: string
-  picture: string
+  image: string
 }
 
-const CatSensor = (props: CatSensorProps) => {
+const CatSensor: FC<CatSensorProps>  = (props) => {
+  const {id, objects, detectedAt, image} = props
+
   return (
   <div className="flex flex-row">
     <div className='catcard'>
