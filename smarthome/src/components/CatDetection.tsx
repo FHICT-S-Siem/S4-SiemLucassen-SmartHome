@@ -13,6 +13,7 @@ interface CatDetectionProps {
     xMax: number
     yMax: number
     confidence: number
+    type: string
   }[]
   detectedAt: string
   image: string
