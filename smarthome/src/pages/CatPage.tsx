@@ -1,7 +1,7 @@
 import React, {FC, useContext, useEffect, useState} from 'react'
 import Image from 'next/image'
 import { Context } from "./Store"
-import CatDetection from '../components/CatDetection'
+import CatDetection from '../components/Detection'
 
 
 const CatPage = () => {
@@ -11,12 +11,12 @@ const CatPage = () => {
 	  	fetch('/api/detection')
 		  	.then(res => res.json())
 			.then((data) => 
-				store.dispatch({type: "setCatDetections", payload: data})
+				store.dispatch({type: "setDetections", payload: data})
 			)
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
   return <>
-      {store.state.catDetections?.map(cD => <CatDetection key={cD.id} {...cD}/>)}
+      {store.state.detections?.map(d => <CatDetection key={d.id} {...d}/>)}
     </>
   
 }

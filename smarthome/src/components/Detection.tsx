@@ -2,11 +2,11 @@ import React, {FC, useContext, useEffect, useState} from 'react'
 import Image from 'next/image'
 import { Context } from "../pages/Store"
 
-interface CatDetectionProps {
+interface DetectionProps {
   id: number
   objects: {
     id: number,
-    catDetection: CatDetectionProps
+    detection: DetectionProps
     objId: number,
     xMin: number
     yMin: number
@@ -19,7 +19,7 @@ interface CatDetectionProps {
   image: string
 }
 
-const CatDetection: FC<CatDetectionProps>  = (props) => {
+const Detection: FC<DetectionProps>  = (props) => {
   const {id, objects, detectedAt, image} = props
   const store = useContext(Context)
 
@@ -29,8 +29,8 @@ const CatDetection: FC<CatDetectionProps>  = (props) => {
       <div className='overflow-auto w-44 h-96'>
         <h1 className='font-bold text-center mb-3'>Cat detection log</h1>
         <ul>
-          {store.state.catDetections?.map(cD => 
-           <li key={cD.id} className='list-item mb-5 rounded-md bg-secondary w-100  text-white'>
+          {store.state.detections?.map(d => 
+           <li key={d.id} className='list-item mb-5 rounded-md bg-secondary w-100  text-white'>
             <p className='text-center'>
               {props.detectedAt}
             </p>
@@ -78,6 +78,4 @@ const CatDetection: FC<CatDetectionProps>  = (props) => {
   )
 }
 
-export type { CatDetectionProps }
-export default CatDetection
-// export { CatDetection as default, type CatDetectionProps }
+export { Detection as default, type DetectionProps }

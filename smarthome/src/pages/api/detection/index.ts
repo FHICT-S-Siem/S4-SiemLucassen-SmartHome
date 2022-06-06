@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { CatDetectionProps } from '../../../components/CatDetection'
+import { DetectionProps } from '../../../components/Detection'
 import { prisma } from '../../../../lib/prisma'
 import { PrismaClientValidationError } from '@prisma/client/runtime'
 
@@ -60,7 +60,7 @@ export default async function handler(
     if (req.headers['content-type'] !== 'application/json')
       return res.status(415).json({ message: `Content-type '${req.headers['content-type']}' not supported` })
   
-    const body: CatDetectionProps = req.body
+    const body: DetectionProps = req.body
   
     const detection = await prisma.detection.create({
       data: {

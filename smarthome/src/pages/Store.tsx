@@ -1,17 +1,17 @@
 import { createContext, FC, Dispatch, useReducer, ReactNode } from 'react'
-import { CatDetectionProps } from '../components/CatDetection'
+import { DetectionProps } from '../components/Detection'
 
 const initialState = {
-    catDetections: null as CatDetectionProps[] | null,
+  detections: null as DetectionProps[] | null,
 }
 
 type Action =
-| { type: 'setCatDetections', payload: CatDetectionProps[] }
+| { type: 'setDetections', payload: DetectionProps[] }
 
 const reducer = (state = initialState, action: Action): InitialState => {
   switch (action.type) {
-    case 'setCatDetections': 
-      return { ...state, catDetections: action.payload }
+    case 'setDetections': 
+      return { ...state, detections: action.payload }
     default:
       return state
   }
