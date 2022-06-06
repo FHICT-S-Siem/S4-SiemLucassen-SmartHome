@@ -75,8 +75,9 @@ const CatDetection: FC<CatDetectionProps>  = (props) => {
       </div>
     </div>
   </div>
-
   )
 }
 
-export { CatDetection as default, type CatDetectionProps }
+export type { CatDetectionProps }
+export default CatDetection
+// export { CatDetection as default, type CatDetectionProps }

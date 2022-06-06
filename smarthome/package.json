@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-
     "start": "NODE_ENV=production next start",
     "prod": "npm run build && npm run start",
-    "lint": "next lint",
-    "db:reset": "npx prisma migrate reset --force && npx prisma db push"
+    "db:reset": "npx prisma migrate reset --force && npx prisma db push",
+    "lint": "next lint"
   },
   "dependencies": {
     "@prisma/client": "^3.14.0",
