@@ -4,7 +4,7 @@
 
 @layer components {
     .topbar {
-        @apply flex flex-row items-center fixed z-20
+        @apply flex flex-row items-center justify-between z-20
         bg-primary dark:bg-dark-primary text-white
         w-full h-16 m-0 
         transition-all duration-300 ease-linear

@@ -2,11 +2,7 @@ import React, {useState, useEffect} from 'react';
 import useDarkMode from '../hooks/useDarkMode';
 import { FaSun, FaMoon } from 'react-icons/fa'
 
-interface TopBarProps {
-
-}
-
-export const TopBar: React.FC<TopBarProps> = ({}) => {
+export const TopBar = ({}) => {
   const [dateState, setDateState] = useState(new Date());
   useEffect(() => {
     setInterval(() => setDateState(new Date()), 5000);
@@ -14,7 +10,7 @@ export const TopBar: React.FC<TopBarProps> = ({}) => {
         return (
           <div className='topbar'>
               <SmartHomeIcon />
-                <div className='flex flex-row flex-end'>
+                <div className='flex flex-row mr-5'>
                 <ThemeIcon />
                   <p className='mr-5'>
                     {dateState.toLocaleDateString('en-GB', {
@@ -36,11 +32,11 @@ export const TopBar: React.FC<TopBarProps> = ({}) => {
 }
 
 
-const SmartHomeIcon: any = () => {
-    return(<><h1 className='font-bold  ml-3'>Smart</h1><h1 className='ml-0.5'>Home</h1></>)
+const SmartHomeIcon = () => {
+    return(<div className='flex flex-row'><h1 className='font-bold  ml-3'>Smart</h1><h1 className='ml-0.5'>Home</h1></div>)
 }
 
-const ThemeIcon: any = () => {
+const ThemeIcon = () => {
     const [darkTheme, setDarkTheme] = useDarkMode();
     const handleMode = () => setDarkTheme(!darkTheme);
     return (
