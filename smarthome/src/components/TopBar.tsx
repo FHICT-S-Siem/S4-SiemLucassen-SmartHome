@@ -31,6 +31,7 @@ export const TopBar = ({}) => {
         );
 }
 
+
 const SmartHomeIcon = () => {
     return(<div className='flex flex-row'><h1 className='font-bold  ml-3'>Smart</h1><h1 className='ml-0.5'>Home</h1></div>)
 }
