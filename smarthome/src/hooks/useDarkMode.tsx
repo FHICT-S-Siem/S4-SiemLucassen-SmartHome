@@ -3,10 +3,7 @@ import { useEffect, useState } from 'react';
 const useLocalStorage = <T, >(key: string, initialValue: T) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      console.log('before')
       const item = window.localStorage.getItem(key);
-      console.log('after')
-
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       return initialValue;
@@ -35,7 +32,6 @@ const useDarkMode = () => {
     const className = 'dark';
     const bodyClass = window.document.body.classList;
     isEnabled ? bodyClass.add(className) : bodyClass.remove(className);
-    console.log('wergf')
   }, [isEnabled]);
 
   return [enabled, setEnabled];
