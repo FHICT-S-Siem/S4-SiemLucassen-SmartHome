@@ -1,6 +1,5 @@
 import React, {FC, useContext, useEffect, useState} from 'react'
 import Image from 'next/image'
-import { Context } from "../pages/Store"
 
 interface DetectionProps {
   id: number
@@ -21,7 +20,6 @@ interface DetectionProps {
 
 const Detection: FC<DetectionProps>  = (props) => {
   const {id, objects, detectedAt, image} = props
-  const store = useContext(Context)
 
   return (
   <div className="flex flex-row">
@@ -29,12 +27,12 @@ const Detection: FC<DetectionProps>  = (props) => {
       <div className='overflow-auto w-44 h-96'>
         <h1 className='font-bold text-center mb-3'>Cat detection log</h1>
         <ul>
-          {store.state.detections?.map(d => 
-           <li key={d.id} className='list-item mb-5 rounded-md bg-secondary w-100  text-white'>
+
+           <li className='list-item mb-5 rounded-md bg-secondary w-100  text-white'>
             <p className='text-center'>
               {props.detectedAt}
             </p>
-           </li>)}
+           </li>
          
           <li className='list-disc mb-5 rounded-md bg-blue-500 w-100 text-white'>
             <p className='text-center'>
@@ -56,7 +54,7 @@ const Detection: FC<DetectionProps>  = (props) => {
         <p>Name(s): x</p>
         <p>Detected at: x</p>
         <p>Amount: x</p>
-        {/* <p>{props.objects.length}</p>    */}
+
       </div>
 
     <div className='flex flex-col'>
