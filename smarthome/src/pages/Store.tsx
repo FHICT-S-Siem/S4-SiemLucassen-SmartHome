@@ -3,15 +3,18 @@ import { DetectionProps } from '../components/Detection'
 
 const initialState = {
   detections: null as DetectionProps[] | null,
+  detectionsByDate: null as DetectionProps[] | null
 }
 
 type Action =
 | { type: 'setDetections', payload: DetectionProps[] }
-
+| { type: 'setDetectionsByDate', payload: DetectionProps[] }
 const reducer = (state = initialState, action: Action): InitialState => {
   switch (action.type) {
     case 'setDetections': 
       return { ...state, detections: action.payload }
+    case 'setDetectionsByDate':
+      return { ...state, detectionsByDate: action.payload}
     default:
       return state
   }

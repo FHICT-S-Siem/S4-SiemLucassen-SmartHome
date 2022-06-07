@@ -18,7 +18,7 @@ export default async function handleById(
       else throw new Error()
     switch (req.method) {
       case 'GET':
-        return handleGetImageById(detectionId, res)
+        return handleGetDetectionsById(detectionId, res)
       default:
         return res.status(405).json({ message: `Request method '${req.method}' not supported` })
     }
@@ -32,14 +32,17 @@ export default async function handleById(
   }
 }
 
-async function handleGetImageById(detectionId: number, res: NextApiResponse<string | Error>) {
-  const image = await prisma.detection.findUnique({
+async function handleGetDetectionsById(detectionId: number, res: NextApiResponse<string | Error>) {
+  const image = await prisma.detection.findMany({
     where: {
       id: detectionId,
     },
     select: {
-      image: true
+      id: true,
+      objects: true,
+      detectedAt: true,
+      image: false
     }
   })
-  return res.status(200).json(JSON.stringify(image))
+  return res.status(200).json(image)
 }

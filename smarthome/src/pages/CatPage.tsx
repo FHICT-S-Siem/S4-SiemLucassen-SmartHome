@@ -3,6 +3,7 @@ import { prisma } from '../../lib/prisma'
 import { DetectionProps } from "../components/Detection"
 import DetectionLog from '../components/DetectionLog'
 import DetectionPreview from '../components/DetectionPreview'
+import LiveStream from '../components/LiveStream'
 import StoreProvider from "./Store"
 
 export async function getServerSideProps() {
@@ -22,6 +23,7 @@ const CatPage: FC<{ detections: DetectionProps[] }> = ({ detections }) => {
 	<div className="flex flex-row">
 		<DetectionLog detections={detections}/>
 		<DetectionPreview />
+		<LiveStream />
 	</div>
   </StoreProvider>
 }

@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
-import { DetectionProps } from './Detection'
 
 const LiveStream: FC = () => {
   return (<div className='flex flex-col'>
