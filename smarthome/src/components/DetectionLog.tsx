@@ -10,8 +10,7 @@ const DetectionLog: FC<{ detections: DetectionProps[]}> = ({detections}) => {
     const handleDetectionPreview = async (id: number) => {
       const res = await fetch(`/api/detection/${id}`)
       const data = await res.json()
-      console.log(data)
-      store.dispatch({ type: "setDetectionsOfDay", payload: data})
+      store.dispatch({ type: "setDetections", payload: data})
     }        
   return (<>
     <div className='catcard'>

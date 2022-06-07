@@ -1,5 +1,4 @@
 import React, { FC, useContext } from 'react'
-import Image from 'next/image'
 
 import { Context } from '../pages/Store'
 
@@ -8,7 +7,11 @@ const DetectionPreview = () => {
   
   return (
     <div className='catcard'>        
-      <p>Detected at: {store.state.detections}</p>
+      <p>Detected at: 
+        {console.log(store.state.detections)}
+        {/* {store.state.detections?.map(d => 
+        <div key={d.id}>{d.detectedAt}</div>)} */}
+      </p>
     </div>
   )
 }

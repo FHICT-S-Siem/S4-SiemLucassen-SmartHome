@@ -43,7 +43,7 @@ export default async function handler(
         image: false
       }
     })
-    return res.status(200).json(JSON.stringify(detections))
+    return res.status(200).json(detections)
   }
 
   async function handlePost(
@@ -52,7 +52,7 @@ export default async function handler(
   ) {
     if (req.headers['authorization'] !== process.env.SECRET_KEY)
       return res.status(401).json({ message: 'Invalid authorization token' })
-  
+    
     if (req.headers['content-type'] !== 'application/json')
       return res.status(415).json({ message: `Content-type '${req.headers['content-type']}' not supported` })
   
