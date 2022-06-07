@@ -3,7 +3,7 @@ interface DetectionProps {
   objects: {
     id: number,
     detection: DetectionProps
-    objId: number
+    objectId: number
     xMin: number
     yMin: number
     xMax: number

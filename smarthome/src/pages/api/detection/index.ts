@@ -50,8 +50,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<string | Error>
   ) {
-    if (req.headers['authorization'] !== process.env.SECRET_KEY)
-      return res.status(401).json({ message: 'Invalid authorization token' })
+    
     
     if (req.headers['content-type'] !== 'application/json')
       return res.status(415).json({ message: `Content-type '${req.headers['content-type']}' not supported` })
