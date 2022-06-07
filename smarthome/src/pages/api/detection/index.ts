@@ -7,11 +7,7 @@ interface Error {
     message: string
     stacktrace?: string
 }
-// export async function getServerSideProps() {
-//   return {
-//     props: {}, // will be passed to the page component as props
-//   }
-// }
+
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<string | Error>

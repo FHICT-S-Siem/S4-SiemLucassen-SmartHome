@@ -1,16 +1,18 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
+
 import { DetectionProps } from './Detection'
-import Image from 'next/image'
-import DetectionPreview from './DetectionPreview'
+import { Context } from '../pages/Store'
 
 const DetectionLog: FC<{ detections: DetectionProps[]}> = ({detections}) => {
-
     //set id for the DetectionPreview
+    const store = useContext(Context)
+ 
     const handleDetectionPreview = async (id: number) => {
-        const res = await fetch(`/api/detection/${id}`)
-        const data = await res.json()
-    }
-        
+      const res = await fetch(`/api/detection/${id}`)
+      const data = await res.json()
+      console.log(data)
+      store.dispatch({ type: "setDetectionsOfDay", payload: data})
+    }        
   return (<>
     <div className='catcard'>
       <div className='overflow-auto w-auto h-auto'>
@@ -25,18 +27,6 @@ const DetectionLog: FC<{ detections: DetectionProps[]}> = ({detections}) => {
             )} 
         </ul>
       </div>
-    </div>
-    <div className='catcard'>
-        <h1 className='font-bold text-center mb-3'>Cat preview</h1>
-        <div className="flex flex-row justify-center items-center mb-3">
-          <Image className='rounded-xl' src="/../public/img/sammy-example.jpeg" width={'200'} height={'250'} alt="Sammy" />
-        </div>
-        <p className='text-center'>
-              9 May 2022
-        </p>
-        <p>Name(s): x</p>
-        <p>Detected at: {props.detectedAt}</p>
-        <p>Amount: {props.objects.length}</p>
     </div>
     </>
   )

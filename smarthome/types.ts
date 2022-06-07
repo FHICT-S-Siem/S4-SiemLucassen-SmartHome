@@ -3,17 +3,17 @@ export interface GetDetectionResults {
 }
 
 export interface Detection {
-    id: number;
+    id: number
     objects: {
-        id: number
-        detection: Detection
-        objectId: number
+        id: number,
+        objId: number
         xMin: number
         yMin: number
         xMax: number
         yMax: number
         confidence: number
-    }[]
-    detectedAt: string
-    picture: string
+        type: string
+  }[]
+  detectedAt: string
+  image: string
 }
