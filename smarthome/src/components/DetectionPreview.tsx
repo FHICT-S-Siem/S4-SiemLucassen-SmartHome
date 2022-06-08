@@ -34,7 +34,7 @@ import { Context } from '../pages/Store'
   return (    
     <div className='catcard'>        
       <h1 className='font-bold text-center mb-3'>Cat Preview</h1>  
-      <div className='min-w-[150px]'>
+      <div className='min-w-[150px] max-h-[720px] '>
         {store.state.detections?.map(d => <Image key={d.id} alt="detection" src={handleImage(d.image)} width={290} height={250}/>)}      
         {store.state.detections?.map(d => 
         <div key={d.id}>

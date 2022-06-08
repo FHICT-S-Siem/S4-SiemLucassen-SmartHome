@@ -14,14 +14,14 @@ System_Boundary(boundry, "SmartHome-Dashboard"){
 
 	ContainerDb(db, "Database", "PostgreSQL", "Stores the sensor data.")
 
-    Container(jetson, "IOT sensors", "Python", "Provides sensor data from Jetson Nano.")
+    Container(jetson, "IOT sensors", "Python + Yolov5s", "Provides detection data collected by object detection model via Jetson Nano.")
 }
 
 Rel_D(user, spa, "Monitors dashboard")
 
 Rel_D(spa, api, "Makes API calls to", "JSON/HTTPS")
 
-Rel_D(jetson, api, "Sends sensor data", "MQTT/AMQP")
+Rel_D(jetson, api, "Sends sensor data", "JSON/HTTPS")
 
 Rel_D(api, db, "Reads from and writes to.")
 
