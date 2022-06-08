@@ -11,7 +11,7 @@ interface DetectionProps {
     confidence: number
     type: string
   }[]
-  detectedAt: string
+  detectedAt: number
   image: string
 }
 

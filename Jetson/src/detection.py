@@ -11,7 +11,7 @@ class Detection:
         self.image = self.encode_bitmap_to_base64(bitmap)
 
     def get_local_time(self):
-        return datetime.datetime.now().strftime("%c")
+        return int(round(datetime.datetime.now().timestamp()))
 
     def reformat_dataframe(self, df):
         df.pop('class')
