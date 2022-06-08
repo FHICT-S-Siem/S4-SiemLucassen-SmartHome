@@ -6,10 +6,7 @@ import { Context } from '../pages/Store'
 const DetectionLog: FC<{ detections: DetectionProps[]}> = ({detections}) => {
     //set id for the DetectionPreview
     const store = useContext(Context)
-    const showDate = (detectedAt:number) =>{
-      let d = new Date(detectedAt)
-      
-    }
+   
     const handleDetectionPreview = async (id: number) => {
       const res = await fetch(`/api/detection/${id}`)
       const data = await res.json()
@@ -23,7 +20,7 @@ const DetectionLog: FC<{ detections: DetectionProps[]}> = ({detections}) => {
             {detections.map(d => 
             <li className='list-item mb-5 rounded-full cursor-pointer bg-secondary w-100 hover:bg-blue-600 focus:bg-blue-600 text-white' key={d.id}>
                 <button onClick={() => handleDetectionPreview(d.id)} className='w-full hover:shadow-md'>
-                    <Moment format='YYYY/MM/DD' unix>{d.detectedAt}</Moment> <br></br>
+                    <Moment format='MMMM Do hh:mm' unix >{d.detectedAt}</Moment>
                 </button>
             </li>
             )} 
