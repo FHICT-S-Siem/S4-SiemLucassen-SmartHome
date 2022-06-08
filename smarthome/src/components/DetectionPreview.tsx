@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react'
 
 import { Context } from '../pages/Store'
 
-const DetectionPreview = () => {
+  const DetectionPreview = () => {
   const store = useContext(Context)
   const secondsToElapsedTime = (detectedAt:number) => {
     const seconds = Math.round((Date.now()-detectedAt*1000)/1000)
@@ -27,10 +27,10 @@ const DetectionPreview = () => {
     const years = Math.round(days / 365)
     return years + " years ago"
   }
-  {console.log(store.state)}
   return (
     
     <div className='catcard'>        
+      <h1 className='font-bold text-center mb-3'>Cat Preview</h1>
       {store.state.detections?.map(d => 
       <div key={d.id}>
         id: {d.id} <br></br>
