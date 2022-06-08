@@ -13,13 +13,17 @@ RUN apt install -y libgstreamer-opencv1.0-0 libgstreamer1.0-dev libgstreamer-plu
 RUN apt install -y build-essential libfreetype6-dev
 
 RUN python3.8 -m pip install --upgrade pip setuptools
-RUN python3.8 -m pip install scikit-build opencv-python pika matplotlib pandas Pillow PyYAML requests scipy tqdm seaborn
+RUN python3.8 -m pip install scikit-build opencv-python pika matplotlib pandas Pillow PyYAML requests scipy tqdm seaborn python-dotenv 
 RUN python3.8 -m pip install torch==1.8.1 torchvision==0.9.1 -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+
+
 
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
 RUN echo "$PATH" && echo "$LD_LIBRARY_PATH"
 
+ENV SECRET_KEY="key123"
+ENV API_URL="https://smarthome-siem-s4.herokuapp.com/api/detection"
 COPY src src
 
 ENTRYPOINT [ "python3.8", "src/main.py" ]

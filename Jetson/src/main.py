@@ -39,7 +39,7 @@ def is_cat_detected_within_last_minute(dt_last_cat_detection):
 while True:
     try:
         # sets camera
-        cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        cap = cv2.VideoCapture(0)
         print("Camera connected")
         dt_last_cat_detection = datetime.now() + timedelta(seconds=10)
 
