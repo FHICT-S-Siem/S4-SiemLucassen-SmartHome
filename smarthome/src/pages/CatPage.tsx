@@ -21,7 +21,7 @@ export async function getServerSideProps() {
 
 const CatPage: FC<{ detections: DetectionProps[] }> = ({ detections }) => {
   return <StoreProvider>
-	<div className="flex flex-row">
+	<div className="flex flex-row flex-wrap">
 		<DetectionLog detections={detections}/>
 		<DetectionPreview />
 		<LiveStream />
