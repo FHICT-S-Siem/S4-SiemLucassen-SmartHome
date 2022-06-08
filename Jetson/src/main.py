@@ -69,7 +69,7 @@ while True:
             print(
 				f'[ status: {res.status_code} ]' +
 				f'[ {data.detectedAt} ]' +
-				f'[ object(s): {len(data.objects)} ]'
+				f'[ object(s): {(data.objects)} ]'
             )
 
     except:  

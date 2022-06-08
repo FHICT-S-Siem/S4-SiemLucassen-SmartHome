@@ -8,15 +8,19 @@ const DetectionPreview = () => {
   return (
     
     <div className='catcard'>        
-        {store.state.detections?.map(d => <div key={d.id}>
+      {store.state.detections?.map(d => 
+      <div key={d.id}>
         id: {d.id} <br></br>
         Detected at:  {d.detectedAt}
+        
           {d.objects.map(o => 
             <p key={o.id}>
             confidence:  {o.confidence} <br></br>
             type:{o.type}</p>
-          )}</div>
-        )}
+          )}
+
+      Image: {d.image}
+      </div>)}
     </div>
   )
 }
