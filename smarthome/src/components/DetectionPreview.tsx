@@ -5,24 +5,6 @@ import { Context } from '../pages/Store'
 
   const DetectionPreview = () => {
   const store = useContext(Context)
-	const canvasRef = createRef<HTMLCanvasElement>()
-
-  // const handleImage = async (_image:string) => {
-    
-	// 	if (!canvasRef.current) return
-	// 	const canvas = canvasRef.current
-	// 	const context = canvas.getContext('2d')
-	// 	if (!context) return
-	// 	const image = new Image()
-	// 	image.onload = () => {
-	// 		canvas.width = image.width;
-	// 		canvas.height = image.height;
-	// 		context.drawImage(image, 0, 0);
-	// 	}
-	// 	image.src = 'data:image/png;base64,' + _image
-
-  //   return <canvas ref={canvasRef} className="w-full h-full rounded-t-[15px]"/>
-  // }
   const handleImage = (_image:string) => {
     return 'data:image/png;base64,' + _image
   }
@@ -57,7 +39,12 @@ import { Context } from '../pages/Store'
       {store.state.detections?.map(d => <Image key={d.id} alt="detection" src={handleImage(d.image)} width={290} height={250}/>)}      
       {store.state.detections?.map(d => 
       <div key={d.id}>
-        Detected {secondsToElapsedTime(d.detectedAt)}  
+        <p className='text-gray-200 text-sm font-semibold'>Detected {secondsToElapsedTime(d.detectedAt)}</p>
+        <p>{d.objects.length} {d.objects.length > 1 ? 'cats' : 'cat' } detected</p>  
+        <br/>
+        <p>name: </p>
+        <p>breed: </p>
+
       </div>)}
     </div>
   )
