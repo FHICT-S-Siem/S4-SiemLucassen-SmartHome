@@ -85,6 +85,5 @@ while True:
         cv2.destroyAllWindows()
         print(e)
         continue
-¥
 
 
