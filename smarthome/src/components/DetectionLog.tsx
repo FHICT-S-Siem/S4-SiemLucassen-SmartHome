@@ -14,7 +14,7 @@ const DetectionLog: FC<{ detections: DetectionProps[]}> = ({detections}) => {
     }        
   return (<>
     <div className='catcard'>
-      <div className='overflow-y-scroll w-auto h-auto max-h-[720px] px-1'>
+      <div className='overflow-y-scroll w-auto h-auto max-h-[720px] min-w-[150px] px-2'>
         <h1 className='font-bold text-center mb-3'>Cat detection log</h1>
         <ul>
             {detections.map(d => 

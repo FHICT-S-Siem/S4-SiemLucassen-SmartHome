@@ -1,9 +1,31 @@
-import React, { FC, useContext } from 'react'
+import Image from 'next/image'
+import React, { createRef, FC, useContext } from 'react'
 
 import { Context } from '../pages/Store'
 
   const DetectionPreview = () => {
   const store = useContext(Context)
+	const canvasRef = createRef<HTMLCanvasElement>()
+
+  // const handleImage = async (_image:string) => {
+    
+	// 	if (!canvasRef.current) return
+	// 	const canvas = canvasRef.current
+	// 	const context = canvas.getContext('2d')
+	// 	if (!context) return
+	// 	const image = new Image()
+	// 	image.onload = () => {
+	// 		canvas.width = image.width;
+	// 		canvas.height = image.height;
+	// 		context.drawImage(image, 0, 0);
+	// 	}
+	// 	image.src = 'data:image/png;base64,' + _image
+
+  //   return <canvas ref={canvasRef} className="w-full h-full rounded-t-[15px]"/>
+  // }
+  const handleImage = (_image:string) => {
+    return 'data:image/png;base64,' + _image
+  }
   const secondsToElapsedTime = (detectedAt:number) => {
     const seconds = Math.round((Date.now()-detectedAt*1000)/1000)
     if (seconds < 60) 
@@ -30,19 +52,12 @@ import { Context } from '../pages/Store'
   return (
     
     <div className='catcard'>        
-      <h1 className='font-bold text-center mb-3'>Cat Preview</h1>
+      <h1 className='font-bold text-center mb-3'>Cat Preview</h1>  
+
+      {store.state.detections?.map(d => <Image key={d.id} alt="detection" src={handleImage(d.image)} width={290} height={250}/>)}      
       {store.state.detections?.map(d => 
       <div key={d.id}>
-        id: {d.id} <br></br>
-        Detected at:  {secondsToElapsedTime(d.detectedAt)}
-        
-          {d.objects.map(o => 
-            <p key={o.id}>
-            confidence:  {o.confidence} <br></br>
-            type:{o.type}</p>
-          )}
-
-      Image: {d.image}
+        Detected {secondsToElapsedTime(d.detectedAt)}  
       </div>)}
     </div>
   )

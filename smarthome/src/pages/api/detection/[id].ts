@@ -41,7 +41,7 @@ async function handleGetDetectionsById(detectionId: number, res: NextApiResponse
       id: true,
       objects: true,
       detectedAt: true,
-      image: false
+      image: true
     }
   })
   return res.status(200).json(image)
