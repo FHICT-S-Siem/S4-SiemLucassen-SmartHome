@@ -9,7 +9,7 @@ interface Error {
 
 export default async function handleById(
   req: NextApiRequest,
-  res: NextApiResponse<string | Error>
+  res: NextApiResponse<object[] | Error>
 ) {
   try {
     const x = req.query.id 
@@ -32,7 +32,7 @@ export default async function handleById(
   }
 }
 
-async function handleGetDetectionsById(detectionId: number, res: NextApiResponse<string | Error>) {
+async function handleGetDetectionsById(detectionId: number, res: NextApiResponse<object[]  | Error>) {
   const image = await prisma.detection.findMany({
     where: {
       id: detectionId,
