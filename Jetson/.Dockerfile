@@ -11,8 +11,7 @@ RUN python3.7 -m pip install --upgrade pip setuptools wheel
 RUN python3.7 -m pip install pika opencv-python numpy matplotlib==3.3.0 pandas Pillow PyYAML requests scipy tqdm seaborn
 
 # copy the python code.
-COPY main.py main.py
+COPY src src
 
 # entrypoint for the python code.
-# ENTRYPOINT [ "python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=5000" ]
 ENTRYPOINT [ "python3.7", "main.py" ]
