@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { CatDetectionProps } from '../../../components/CatDetection'
+import { DetectionProps } from '../../../components/Detection'
 import { prisma } from '../../../../lib/prisma'
 import { PrismaClientValidationError } from '@prisma/client/runtime'
 
@@ -43,20 +43,19 @@ export default async function handler(
         image: false
       }
     })
-    return res.status(200).json(JSON.stringify(detections))
+    return res.status(200).json(detections)
   }
 
   async function handlePost(
     req: NextApiRequest,
     res: NextApiResponse<string | Error>
   ) {
-    if (req.headers['authorization'] !== process.env.SECRET_KEY)
-      return res.status(401).json({ message: 'Invalid authorization token' })
-  
+    
+    
     if (req.headers['content-type'] !== 'application/json')
       return res.status(415).json({ message: `Content-type '${req.headers['content-type']}' not supported` })
   
-    const body: CatDetectionProps = req.body
+    const body: DetectionProps = req.body
   
     const detection = await prisma.detection.create({
       data: {

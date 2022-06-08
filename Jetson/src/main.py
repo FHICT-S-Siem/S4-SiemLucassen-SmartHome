@@ -25,7 +25,7 @@ model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
 # Set IOU treshold
 # model.iou = 0.3
 # Set confidence treshold
-model.conf = 0.2
+model.conf = 0.45
 # Only detect cats
 model.classes = [15]
 
@@ -43,7 +43,7 @@ while True:
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
             ret, frame = cap.read()
-            base_img = copy(frame)    
+            # img = copy(frame)    
             
             # checks frames if any objects exist
             results = model(frame) 
@@ -53,13 +53,12 @@ while True:
 
             # reformats detections to pandas dataframe
             df = results.pandas().xyxy[0]
-
             # if empty continue with next frame
             if (df.empty): 
                 # else send detection data
                 continue
 
-            data = Detection(df, base_img)            
+            data = Detection(df, results.render()[0])            
             res = requests.post(
 				url=API_URL, 
                 # to get the image with bounding box use: results.render()[0]
@@ -69,7 +68,7 @@ while True:
             print(
 				f'[ status: {res.status_code} ]' +
 				f'[ {data.detectedAt} ]' +
-				f'[ object(s): {len(data.objects)} ]'
+				f'[ object(s): {(data.objects)} ]'
             )
 
     except:  

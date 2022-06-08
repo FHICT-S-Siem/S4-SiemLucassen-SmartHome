@@ -1,24 +1,31 @@
-import React, {FC, useContext, useEffect, useState} from 'react'
-import Image from 'next/image'
-import { Context } from "./Store"
-import CatDetection from '../components/CatDetection'
+import React, { FC } from 'react'
+import { prisma } from '../../lib/prisma'
+import { DetectionProps } from "../components/Detection"
+import DetectionLog from '../components/DetectionLog'
+import DetectionPreview from '../components/DetectionPreview'
+import LiveStream from '../components/LiveStream'
+import StoreProvider from "./Store"
 
+export async function getServerSideProps() {
+	const detections = await prisma.detection.findMany({
+	  select: {
+		id: true,
+		objects: true,
+		detectedAt: true,
+		image: false
+	  }
+	})
+	return { props: { detections } } // will be passed to the page component as props
+}
 
-const CatPage = () => {
-  const store = useContext(Context)
-
-	useEffect(() => {
-	  	fetch('/api/detection')
-		  	.then(res => res.json())
-			.then((data) => 
-				store.dispatch({type: "setCatDetections", payload: data})
-			)
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
-  return <>
-      {store.state.catDetections?.map(cD => <CatDetection key={cD.id} {...cD}/>)}
-    </>
-  
+const CatPage: FC<{ detections: DetectionProps[] }> = ({ detections }) => {
+  return <StoreProvider>
+	<div className="flex flex-row">
+		<DetectionLog detections={detections}/>
+		<DetectionPreview />
+		<LiveStream />
+	</div>
+  </StoreProvider>
 }
 
 export default CatPage

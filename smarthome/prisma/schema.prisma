@@ -9,14 +9,13 @@ datasource db {
 
 model Detection {
   id         Int      @id @default(autoincrement())
-  objects    Object[]
-  detectedAt String
+  detectedAt Int
   image      String
+  objects    Object[]
 }
 
 model Object {
   id         Int       @id @default(autoincrement())
-  detection  Detection @relation(fields: [objectId], references: [id])
   objectId   Int
   xMin       Float
   yMin       Float
@@ -24,4 +23,5 @@ model Object {
   yMax       Float
   confidence Float
   type       String
+  detection  Detection @relation(fields: [objectId], references: [id])
 }
