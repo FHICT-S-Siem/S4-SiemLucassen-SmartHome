@@ -31,21 +31,18 @@ import { Context } from '../pages/Store'
     const years = Math.round(days / 365)
     return years + " years ago"
   }
-  return (
-    
+  return (    
     <div className='catcard'>        
       <h1 className='font-bold text-center mb-3'>Cat Preview</h1>  
-
-      {store.state.detections?.map(d => <Image key={d.id} alt="detection" src={handleImage(d.image)} width={290} height={250}/>)}      
-      {store.state.detections?.map(d => 
-      <div key={d.id}>
-        <p className='text-gray-200 text-sm font-semibold'>Detected {secondsToElapsedTime(d.detectedAt)}</p>
-        <p>{d.objects.length} {d.objects.length > 1 ? 'cats' : 'cat' } detected</p>  
-        <br/>
-        <p>name: </p>
-        <p>breed: </p>
-
-      </div>)}
+      <div className='min-w-[150px]'>
+        {store.state.detections?.map(d => <Image key={d.id} alt="detection" src={handleImage(d.image)} width={290} height={250}/>)}      
+        {store.state.detections?.map(d => 
+        <div key={d.id}>
+          <p className='text-gray-300 text-sm font-semibold'>Detected {secondsToElapsedTime(d.detectedAt)}</p>
+          <p>{d.objects.length} {d.objects.length > 1 ? 'cats' : 'cat' } detected with <br/>{d.objects.map(o => <> {Math.round(o.confidence * 10000) / 100}% confidence<br/></>)}</p>  
+          <br/>
+        </div>)}
+      </div>
     </div>
   )
 }
