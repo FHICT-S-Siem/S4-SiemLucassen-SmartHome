@@ -27,7 +27,7 @@ Using Docker, I push and run my object detection script on the Jetson Nano, to d
 A problem I came across when running the object detection model on a Jetson, is to make use of the CUDA (GPU), instead of the CPU when detecting objects.<br> 
 You will have to flash your Jetson with a JetPack SDK corresponding with the CUDA version you want to use.<br>
 
-If you want to run CUDA on the Jetson, you could make use of the l4t-pytorch images, containing Pytorch and torchvision pre-installed in a 3.6 Python environment.<br>
+If you want to run CUDA on the Jetson, you could make use of the l4t-pytorch images, containing Pytorch and torchvision pre-installed in a 3.6 Python environment. You will also have to make sure to maintain the correct python library/module versions as some libraries won't work in particular python versions.<br>
 - https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch
 
 
@@ -40,6 +40,13 @@ Detection API: https://smarthome-siem-s4.herokuapp.com/api/detection
 ## Project board
 
 I like to make use of the GitHub project board to manage the development of my project, as it is easy to use for an agile environment. <br>
+I made user-story and spike templates, to effeciently implement new features for my project on the board.<br>
+![afbeelding](https://user-images.githubusercontent.com/48807736/172728831-93051207-a6ae-46f5-8e55-05272590dfbf.png)
+
+Example:![afbeelding](https://user-images.githubusercontent.com/48807736/172729159-fe97f73f-a083-4944-bf2a-4b9ca7335b9e.png)
+
+- https://github.com/FHICT-S-Siem/S4-SiemLucassen-SmartHome/projects/1
+
 
 ## Container diagram
 ![containerdiagram](https://user-images.githubusercontent.com/48807736/172719585-24bb5ee0-644f-4472-9c8e-cfa69832fdb2.png)
