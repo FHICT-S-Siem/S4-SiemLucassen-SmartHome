@@ -7,7 +7,7 @@ import LiveStream from '../components/LiveStream'
 import StoreProvider from "./Store"
 
 export async function getServerSideProps() {
-	const detections = await prisma.detection.findMany({
+	let detections = await prisma.detection.findMany({
 	  select: {
 		id: true,
 		objects: true,
@@ -15,7 +15,8 @@ export async function getServerSideProps() {
 		image: false
 	  }
 	})
-	return { props: { detections } } // will be passed to the page component as props
+	detections = detections.sort((a: { detectedAt: number }, b: { detectedAt: number }) => b.detectedAt - a.detectedAt)
+	return { props: { detections } }// will be passed to the page component as props
 }
 
 const CatPage: FC<{ detections: DetectionProps[] }> = ({ detections }) => {

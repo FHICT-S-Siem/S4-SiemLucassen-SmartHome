@@ -5,7 +5,7 @@ import { Context } from '../pages/Store'
 
   const DetectionPreview = () => {
   const store = useContext(Context)
-  const handleImage = (_image:string) => {
+  const handleImage = (_image:string | undefined) => {
     return 'data:image/png;base64,' + _image
   }
   const secondsToElapsedTime = (detectedAt:number) => {

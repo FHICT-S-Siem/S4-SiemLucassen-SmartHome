@@ -10,7 +10,7 @@ interface Error {
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<string | Error>
+    res: NextApiResponse<object[] | string | Error>
   ) {
     try {
       switch (req.method) {
@@ -33,7 +33,7 @@ export default async function handler(
 
   async function handleGet(
     req: NextApiRequest,
-    res: NextApiResponse<string | Error>
+    res: NextApiResponse<object[] | Error>
   ) {
     const detections = await prisma.detection.findMany({
       select: {
