@@ -1,7 +1,7 @@
 # S4-SiemLucassen-SmartHome
 
 ## About
-This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices. This idea was created due to 'Freaky-fridays' at my college, where I have every friday, to work on a personal project for the 4th Semester. Because there is a time factor, I will keep the first iterations effecient and simple, and will keep adding features along the way.
+This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices. This idea was created due to 'Freaky-fridays' at my college, where I am allowed to spend ~140 hours to work on a personal project during the 4th Semester. Because there is a time factor, I will keep the first iterations effecient and simple, and will keep investigate and implement features along the way.
 
 ## Technologies
 The web application was built with React/NextJS. <br> NextJS lets you build server-side rendering and static web applications using React. I used TypeScript, as this makes it easy to find type-conflicts and makes building the project more secure as it checks for types.<br>
@@ -22,7 +22,8 @@ To run the model, I used PyTorch which is an open source machine learning framew
 - https://pytorch.org/
 
 ## Hardware
-Using Docker, I push and run my object detection script on the Jetson Nano, to detect cats with the mounted camera. <br>
+I wrote a dockerfile to push and run my object detection script on the Jetson Nano, to detect cats with the mounted camera. <br>
+
 A problem I came across when running the object detection model on a Jetson, is to make use of the CUDA (GPU), instead of the CPU when detecting objects.<br> 
 You will have to flash your Jetson with a JetPack SDK corresponding with the CUDA version you want to use.<br>
 
@@ -41,6 +42,7 @@ In Figma I iterated over designs for the smarthome dashboard:
 
 ![afbeelding](https://user-images.githubusercontent.com/48807736/172740171-6451a4b6-4fff-4431-a9ea-0c7909e1da5a.png)
 
+UI tests: Coming soon...
 
 ## Project demo
 
