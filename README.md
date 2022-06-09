@@ -30,6 +30,18 @@ You will have to flash your Jetson with a JetPack SDK corresponding with the CUD
 If you want to run CUDA on the Jetson, you could make use of the l4t-pytorch images, containing Pytorch and torchvision pre-installed in a 3.6 Python environment. You will also have to make sure to maintain the correct python library/module versions as some libraries won't work in particular python versions.<br>
 - https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch
 
+## Design
+
+In Figma I iterated over designs for the smarthome dashboard:
+
+- https://www.figma.com/file/FJ9OP6CGWR6z4DyMlIaOe3/Smart-Home?node-id=0%3A1
+
+![afbeelding](https://user-images.githubusercontent.com/48807736/172739842-b1689216-f858-4ec8-a057-2247f45dcaad.png)
+
+![afbeelding](https://user-images.githubusercontent.com/48807736/172739878-a9b7a3b0-3cef-437e-8c2c-bdbde61253f7.png)
+
+![afbeelding](https://user-images.githubusercontent.com/48807736/172740171-6451a4b6-4fff-4431-a9ea-0c7909e1da5a.png)
+
 
 ## Project demo
 
