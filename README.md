@@ -4,7 +4,9 @@
 
 
 ## About
-This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices. This idea was created due to 'Freaky-fridays' at my college, where I am allowed to spend ~140 hours to work on a personal project during the 4th Semester. Because there is a time factor, I will keep the first iterations effecient and simple, and will keep investigate and implement features along the way.
+This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices. This idea was created due to 'Freaky-fridays-challenge' at my college, where I am allowed to spend ~140 hours to work on a personal project during the 4th Semester. Because there is a time factor, I will keep the first iterations efficient and simple, and will keep investigating and implement features along the way.
+
+The feature I implemented first, is a way for me to get notified on the smarthome dashboard, when my cat(Sammy) is in front or outside my living room window door, so I can let him in and out. My cat could just go through the back door cat-flap, but most of the time he wants to go out in the front-yard, so my stubborn cat will sit on our windowsill until he gets what he wants.
 
 ## Technologies
 ### Software
@@ -65,7 +67,7 @@ In the future I will be hosting the application on my home server.
 ## Project board
 
 I like to make use of the GitHub project board to manage the development of my project, as it is easy to use for an agile environment. <br>
-I made user-story and spike templates, to effeciently implement new features for my project on the board.<br>
+I made user-story and spike templates, to efficiently implement new features for my project on the board.<br>
 
 - https://github.com/FHICT-S-Siem/S4-SiemLucassen-SmartHome/projects/1 <br>
 
