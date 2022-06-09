@@ -7,6 +7,7 @@
 This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices. This idea was created due to 'Freaky-fridays' at my college, where I am allowed to spend ~140 hours to work on a personal project during the 4th Semester. Because there is a time factor, I will keep the first iterations effecient and simple, and will keep investigate and implement features along the way.
 
 ## Technologies
+### Software
 The web application was built with React/NextJS. <br> NextJS lets you build server-side rendering and static web applications using React. I used TypeScript, as this makes it easy to find type-conflicts and makes building the project more secure as it checks for types.<br>
 - https://reactjs.org/
 - https://nextjs.org/
@@ -24,7 +25,7 @@ To run the model, I used PyTorch which is an open source machine learning framew
 - https://www.python.org
 - https://pytorch.org/
 
-## Hardware
+### Hardware
 I wrote a dockerfile to push and run my object detection script on the Jetson Nano, to detect cats with the mounted camera. <br>
 
 A problem I came across when running the object detection model on a Jetson, is to make use of the CUDA (GPU), instead of the CPU when detecting objects.<br> 
@@ -33,7 +34,6 @@ You will have to flash your Jetson with a JetPack SDK corresponding with the CUD
 If you want to run CUDA on the Jetson, you could make use of the l4t-pytorch images, containing Pytorch and torchvision pre-installed in a 3.6 Python environment. You will also have to make sure to maintain the correct python library/module versions as some libraries won't work in particular python versions.<br>
 - https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch
 
-## Container diagram
 ![containerdiagram](https://user-images.githubusercontent.com/48807736/172719585-24bb5ee0-644f-4472-9c8e-cfa69832fdb2.png)
 
 ## Design
@@ -72,8 +72,6 @@ I made user-story and spike templates, to effeciently implement new features for
 ![afbeelding](https://user-images.githubusercontent.com/48807736/172728831-93051207-a6ae-46f5-8e55-05272590dfbf.png)
 
 Example:![afbeelding](https://user-images.githubusercontent.com/48807736/172729159-fe97f73f-a083-4944-bf2a-4b9ca7335b9e.png)
-
-
 
 ## Object detection demo with Yolov5
 
