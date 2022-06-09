@@ -20,13 +20,19 @@
         hover:animate-spin
         cursor-pointer;
     }
-
+    .detectlog {
+        @apply overflow-y-scroll h-96 px-2
+    }
     .sidebar {
         @apply flex flex-col fixed
         top-16 left-0 h-screen w-16 m-0
         bg-primary text-white shadow-xl
         dark:bg-dark-primary 
         transition-all duration-300 ease-linear
+    }
+
+    .sidebar-mobile {
+        @apply hidden
     }
 
     .sidebar-icon {
@@ -49,16 +55,18 @@
     }
 
     .content {
-        @apply flex flex-col top-16 left-16 fixed z-0
+        @apply flex  flex-wrap overflow-auto top-16 left-16 fixed z-30
         bg-white text-blue-500
         dark:bg-dark-canvas 
         w-screen h-screen
     }
 
     .catcard {
-        @apply max-w-xs overflow-hidden p-2 m-2
+        @apply max-w-xs p-2 m-2
+        min-w-[250px] h-auto
+        max-h-[450px]
         shadow-lg rounded-md
         bg-primary text-white
-        dark:bg-dark-primary dark:text-blue-500
+        dark:text-blue-500
     }
 }

@@ -10,11 +10,11 @@ interface SideBarProps {
 
 export const SideBar: React.FC<SideBarProps> = ({}) => {
         return (<>
-            <div className='sidebar'>
+            <div className='sidebar-mobile'>
                 <Link href={'/CatPage'}><a><SideBarIcon icon={<FaCat size="28" />} text='Cat detections' /></a></Link>
                 <Link href={'/Room'}><a><SideBarIcon icon={<ImPower size="28" />} text='Rooms'/></a></Link>
                 <Link href={'/Analytics'}><a><SideBarIcon icon={<SiSimpleanalytics size="28" />} text='Analytics' /></a></Link>
-            </div>            
+            </div>
         </>
         );
 }
