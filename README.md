@@ -8,9 +8,9 @@ The web application was built with React/NextJS. <br> NextJS lets you build serv
 - https://reactjs.org/
 - https://nextjs.org/
 
-The styling was done with the use of TailwindCSS and Flexbox layout.<br>
-- https://tailwindcss.com/
-- https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+I used a PostgreSQL database for storing my detection data, along with Prisma, which is an ORM that uses custom Schema Definition Language (SDL), that automatically writes migrations and generates type-safe code in TypeScript.<br>
+- https://www.prisma.io/
+- https://www.postgresql.org/
 
 For the object detection model I used the pre-trained YOLOv5 model from [ultralytics](https://github.com/ultralytics/yolov5). The YOLO algorithm employs convolutional neural networks (CNN) to detect objects in real-time which is trained. <br>
 - https://www.section.io/engineering-education/introduction-to-yolo-algorithm-for-object-detection/
@@ -42,6 +42,10 @@ In Figma I iterated over designs for the smarthome dashboard:
 
 ![afbeelding](https://user-images.githubusercontent.com/48807736/172740171-6451a4b6-4fff-4431-a9ea-0c7909e1da5a.png)
 
+The styling was done with the use of TailwindCSS, which is an easy to use UI-library to style the react components and Flexbox for the layout.<br>
+- https://tailwindcss.com/
+- https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 UI tests: Coming soon...
 
 ## Project demo
@@ -49,6 +53,8 @@ UI tests: Coming soon...
 The application & database are currently hosted on the cloud application platform Heroku: <br>
 Production: https://smarthome-siem-s4.herokuapp.com <br>
 Detection API: https://smarthome-siem-s4.herokuapp.com/api/detection
+
+In the future I will be hosting the application on my home server.
 
 ## Project board
 
