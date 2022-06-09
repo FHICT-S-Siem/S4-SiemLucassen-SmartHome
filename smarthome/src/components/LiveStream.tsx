@@ -1,22 +1,17 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
+import { BsCameraVideoFill } from 'react-icons/bs'
 
 const LiveStream: FC = () => {
-  return (<div className='flex flex-col'>
+  return (
     <div className='catcard'>
-        <h1 className='font-bold text-center mb-3'>Window</h1>
-        <div className="flex flex-row justify-center items-center">
-          <Image className='rounded-xl' src="/../public/img/window.jpeg" height={'350'} width={'270'} alt="Sammy" />
+        <div className='flex flex-row items-center justify-center'>
+          <h1 className=' flex-col font-bold'>Live stream</h1>
+          <BsCameraVideoFill className='ml-2 text-xl mt-1 flex-col' /> 
         </div>
-      </div>
-
-      <div className='catcard'>
-        <h1 className='font-bold text-center mb-3'>Food tray</h1>
-        <div className="flex flex-row justify-center items-center">
-          <Image className='rounded-xl' src="/../public/img/tray.jpeg" height={'350'} width={'270'} alt="Sammy" />
+        <div className="flex flex-row justify-start items-center">
         </div>
-      </div>
-    </div>
+      </div>   
   )
 }
 

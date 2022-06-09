@@ -1,0 +1,26 @@
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-mobile{
+        display: block;
+        bottom: 50!important;
+        right: 50!important;   
+    }
+    .catcard {
+        max-width: 150px;
+        overflow-wrap: auto;
+        margin-left: 50px;
+    }
+
+    .detectlog {
+        max-height: 150px;
+    }
+
+    .content {
+        left: 0 !important;
+        flex-flow: wrap-reverse !important;
+    }
+
+}

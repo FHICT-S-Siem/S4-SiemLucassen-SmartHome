@@ -1,10 +1,10 @@
 # S4-SiemLucassen-SmartHome
 
 ## About
-This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices.
+This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices. This idea was created due to 'Freaky-fridays' at my college, where I am allowed to spend ~140 hours to work on a personal project during the 4th Semester. Because there is a time factor, I will keep the first iterations effecient and simple, and will keep investigate and implement features along the way.
 
 ## Technologies
-I built the web application with React/NextJS, mainly so I could easily implement the API. <br> NextJS lets you build server-side rendering and static web applications using React. <br>
+The web application was built with React/NextJS. <br> NextJS lets you build server-side rendering and static web applications using React. I used TypeScript, as this makes it easy to find type-conflicts and makes building the project more secure as it checks for types.<br>
 - https://reactjs.org/
 - https://nextjs.org/
 
@@ -14,22 +14,35 @@ The styling was done with the use of TailwindCSS and Flexbox layout.<br>
 
 For the object detection model I used the pre-trained YOLOv5 model from [ultralytics](https://github.com/ultralytics/yolov5). The YOLO algorithm employs convolutional neural networks (CNN) to detect objects in real-time which is trained. <br>
 - https://www.section.io/engineering-education/introduction-to-yolo-algorithm-for-object-detection/
-- https://github.com/ultralytics/yolov5
-<br>
+- https://github.com/ultralytics/yolov5 <br>
+
 YOLOv5 is trained on the COCO dataset containing roughly 330,000 images with 80 different labels. <br>
 To run the model, I used PyTorch which is an open source machine learning framework to run the object detection on the model. <br>
-
 - https://www.python.org
 - https://pytorch.org/
 
 ## Hardware
-Using Docker, I push and run my object detection script on the Jetson Nano, to detect cats with the mounted camera. <br>
+I wrote a dockerfile to push and run my object detection script on the Jetson Nano, to detect cats with the mounted camera. <br>
+
 A problem I came across when running the object detection model on a Jetson, is to make use of the CUDA (GPU), instead of the CPU when detecting objects.<br> 
 You will have to flash your Jetson with a JetPack SDK corresponding with the CUDA version you want to use.<br>
 
 If you want to run CUDA on the Jetson, you could make use of the l4t-pytorch images, containing Pytorch and torchvision pre-installed in a 3.6 Python environment. You will also have to make sure to maintain the correct python library/module versions as some libraries won't work in particular python versions.<br>
 - https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch
 
+## Design
+
+In Figma I iterated over designs for the smarthome dashboard:
+
+- https://www.figma.com/file/FJ9OP6CGWR6z4DyMlIaOe3/Smart-Home?node-id=0%3A1
+
+![afbeelding](https://user-images.githubusercontent.com/48807736/172739842-b1689216-f858-4ec8-a057-2247f45dcaad.png)
+
+![afbeelding](https://user-images.githubusercontent.com/48807736/172739878-a9b7a3b0-3cef-437e-8c2c-bdbde61253f7.png)
+
+![afbeelding](https://user-images.githubusercontent.com/48807736/172740171-6451a4b6-4fff-4431-a9ea-0c7909e1da5a.png)
+
+UI tests: Coming soon...
 
 ## Project demo
 
