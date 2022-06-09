@@ -1,10 +1,10 @@
 # S4-SiemLucassen-SmartHome
 
 ## About
-This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices.
+This project focuses on finding & realizing creative 'smart home' ideas using IT Techniques featuring Machine Learning, web-applications and IoT devices. This idea was created due to 'Freaky-fridays' at my college, where I have every friday, to work on a personal project for the 4th Semester. Because there is a time factor, I will keep the first iterations effecient and simple, and will keep adding features along the way.
 
 ## Technologies
-I built the web application with React/NextJS, mainly so I could easily implement the API. <br> NextJS lets you build server-side rendering and static web applications using React. <br>
+The web application was built with React/NextJS. <br> NextJS lets you build server-side rendering and static web applications using React. I used TypeScript, as this makes it easy to find type-conflicts and makes building the project more secure as it checks for types.<br>
 - https://reactjs.org/
 - https://nextjs.org/
 
@@ -14,11 +14,10 @@ The styling was done with the use of TailwindCSS and Flexbox layout.<br>
 
 For the object detection model I used the pre-trained YOLOv5 model from [ultralytics](https://github.com/ultralytics/yolov5). The YOLO algorithm employs convolutional neural networks (CNN) to detect objects in real-time which is trained. <br>
 - https://www.section.io/engineering-education/introduction-to-yolo-algorithm-for-object-detection/
-- https://github.com/ultralytics/yolov5
-<br>
+- https://github.com/ultralytics/yolov5 <br>
+
 YOLOv5 is trained on the COCO dataset containing roughly 330,000 images with 80 different labels. <br>
 To run the model, I used PyTorch which is an open source machine learning framework to run the object detection on the model. <br>
-
 - https://www.python.org
 - https://pytorch.org/
 
