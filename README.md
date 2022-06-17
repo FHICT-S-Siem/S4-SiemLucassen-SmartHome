@@ -18,7 +18,7 @@ I used a PostgreSQL database for storing my detection data, along with Prisma, w
 - https://www.prisma.io/
 - https://www.postgresql.org/
 
-For the object detection model I wrote a script in Python that uses the pre-trained YOLOv5 model from [ultralytics](https://github.com/ultralytics/yolov5). The YOLO algorithm employs convolutional neural networks (CNN) to detect objects in real-time which is trained. <br>
+For the object detection model I wrote a script in Python that uses the pre-trained YOLOv5 model from [ultralytics](https://github.com/ultralytics/yolov5). The YOLO algorithm employs convolutional neural networks (CNN) to detect objects in real-time. <br>
 - https://www.section.io/engineering-education/introduction-to-yolo-algorithm-for-object-detection/
 - https://github.com/ultralytics/yolov5 <br>
 
